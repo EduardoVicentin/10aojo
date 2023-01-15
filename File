@@ -1,0 +1,23 @@
+[33mcommit 7574c215b663253678064190e0aae82658633287[m[33m ([m[1;36mHEAD -> [m[1;32mDesenvolvimento[m[33m)[m
+Author: Vinícius de Andrade Barros <viniciusdeandrade96@gmail.com>
+Date:   Sun Jan 15 17:42:39 2023 -0300
+
+    Criação da nova branch: Desenvolvimento
+
+[33mcommit 4fa9b45a40e1cc1409c8743ee78a65f26d7e7da8[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmain[m[33m)[m
+Author: Eduardo Henrique Vicentin <eduardo.vicentin@linx.com.br>
+Date:   Mon Dec 12 21:38:35 2022 -0300
+
+    Refatoração
+
+[33mcommit fbd7930ebd7e9b75628c388191c5bebe2ad41848[m
+Author: Eduardo Henrique Vicentin <eduardo.vicentin@linx.com.br>
+Date:   Sat Dec 10 02:17:05 2022 -0300
+
+    Version Endpoint
+
+[33mcommit 8bf32812c978110e8eb629c2ee8a4865bb103391[m
+Author: Eduardo Henrique Vicentin <eduardo.vicentin@linx.com.br>
+Date:   Sat Dec 10 01:53:40 2022 -0300
+
+    Primeiro Commit
