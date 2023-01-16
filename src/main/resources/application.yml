@@ -2,7 +2,7 @@ server:
   port: 80
 
   build.name: ABC-Tech API
-  build.version: 0.0.2
+  build.version: 0.0.3
 
 spring:
   datasource:
@@ -13,4 +13,4 @@ spring:
 
   jpa:
     hibernate:
-      ddl-auto: create
+      ddl-auto: none
