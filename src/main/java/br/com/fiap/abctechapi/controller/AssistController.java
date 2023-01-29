@@ -1,9 +1,12 @@
 package br.com.fiap.abctechapi.controller;
 
+import br.com.fiap.abctechapi.application.AssistApplication;
+import br.com.fiap.abctechapi.application.dto.AssistDto;
 import br.com.fiap.abctechapi.model.Assist;
 import br.com.fiap.abctechapi.service.AssistService;
 import org.apache.coyote.Response;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.ApplicationListener;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -14,14 +17,14 @@ import java.util.List;
 @RestController
 @RequestMapping("/assists")
 public class AssistController {
-    private final AssistService service;
+    private final AssistApplication assistApplication;
     @Autowired
-    public AssistController(AssistService service) {
-        this.service = service;
+    public AssistController(AssistApplication assistApplication) {
+        this.assistApplication = assistApplication;
     }
     @GetMapping
-    public ResponseEntity<List<Assist>> getAssists(){
-        List<Assist> assistList = this.service.getServiceList();
+    public ResponseEntity<List<AssistDto>> getAssists(){
+        List<AssistDto> assistList = this.assistApplication.getAssists();
         return ResponseEntity.ok(assistList);
     }
 
