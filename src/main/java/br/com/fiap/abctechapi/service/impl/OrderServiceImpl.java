@@ -1,6 +1,7 @@
 package br.com.fiap.abctechapi.service.impl;
 
-
+import br.com.fiap.abctechapi.handler.exception.MaxAssistsException;
+import br.com.fiap.abctechapi.handler.exception.MinimumAssistsException;
 import br.com.fiap.abctechapi.model.Assist;
 import br.com.fiap.abctechapi.model.Order;
 import br.com.fiap.abctechapi.repository.AssistRepository;
@@ -8,11 +9,10 @@ import br.com.fiap.abctechapi.repository.OrderRepository;
 import br.com.fiap.abctechapi.service.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
 
-
 import java.util.ArrayList;
 import java.util.List;
 
-public class OrderServiceImpl implements OrderService{
+public class OrderServiceImpl implements OrderService {
     private OrderRepository orderRepository;
     private AssistRepository assistRepository;
 
@@ -30,9 +30,10 @@ public class OrderServiceImpl implements OrderService{
         order.setServices(assists);
 
         if(!order.hasMinAssists()){
-            throw new Exception();
-        }else if(order.exceedMaxAsists()){
-            throw new Exception();
+            throw new MinimumAssistsException("Invalid Assists", "Adicione ao menos uma assistência!");
+        }
+        if(order.exceedMaxAsists()){
+            throw new MaxAssistsException("Invalid Assists","Número maximo de assistência excedido!");
         }
         orderRepository.save(order);
     }
