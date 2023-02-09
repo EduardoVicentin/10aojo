@@ -1,4 +1,4 @@
-version: 0.2
+version: 0.4
 phases:
   pre_build:
     commands:
@@ -6,7 +6,7 @@ phases:
   build:
     commands:
       - echo "Building"
-      - mvn clean compile war:war
+      - mvn clean test compile war:war
   post_build:
     commands:
       - echo "Movendo arquivos para upload"
