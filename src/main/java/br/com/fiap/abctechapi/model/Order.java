@@ -13,9 +13,10 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Order {
+    /*
     private static final int MIN_DEFAULT_ASSIST = 0;
     private static final int MAX_DEFAULT_ASSIST = 15;
-
+    */
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="id", nullable = false)
@@ -35,9 +36,9 @@ public class Order {
     @JoinColumn(name = "end_order_location_id", foreignKey = @ForeignKey (name = "FK_end_order_id"))
     private OrderLocation endOrderLocation;
 
-    public boolean hasMinAssists(){return services.size() > MIN_DEFAULT_ASSIST;}
+    public boolean hasMinAssists(){return services.size() > 0;}
 
-    public boolean exceedMaxAsists(){return  services.size()>MAX_DEFAULT_ASSIST;}
+    public boolean exceedMaxAssists(){return  services.size()> 15;}
 
 
 
